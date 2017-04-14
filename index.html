@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Aphinitea</title>
+    <title>The Foodi Restaurant Report</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -22,8 +22,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	
 	
-	<style>
-	input {
+	<style> 
+	
+	.buttonBox {
 	  position: absolute;
 	  left: -9999px;
 	}
@@ -55,11 +56,16 @@
 
 	@media (min-width:979px){
 		.fixedElement {
-		position:fixed;
-		top:20;
-		right:0;
+			position:fixed;
+			top:20;
+			right:0;
+		}
 	}
-	}
+	
+	span.glyphicon {
+    font-size: 4em;
+}
+
 	
 	</style>
 
@@ -75,7 +81,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">aphinitea</a>
+                <a class="navbar-brand" href="http://thefoodi.com">the foo[di]</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,7 +91,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="index.html#structures">Structures</a>
+                        <a href="index.html">New Report</a>
                     </li>
                     <li class="page-scroll">
                         <a href="index.html#story">Our Story</a>
@@ -112,69 +118,73 @@
 				<br><br><br><br>
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
-						<h3>1. Pick a Structure</h3>
-					
-						<div class="col-sm-3 col-xs-6">
-						   <center>
-							 <center>  
-							 <label class="special">
-							  <input id="structure1" type="radio" name="structure" value="Magnolia">
-							  <img src="img/magnolia.png" class="img-responsive" alt="" width="75%">
-							   <h5>Magnolia</h5>
-							</label>
-							 </center>
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<center> <img src="img/poppy.png" class="img-responsive" alt="" width="75%"> 
-							<h5>Poppy</h5>			</center>	
-						</div>
-						<div class="col-sm-3 col-xs-6">
-							<center> <img src="img/ltv.png" class="img-responsive" alt="" width="75%"> 
-							<h5>Lily of the Valley</h5>		</center>			
-						</div>
-						 <div class="col-sm-3 col-xs-6">
-							<center> <img src="img/jane-bg.png" class="img-responsive" alt="" width="75%"> 
-							<h5>Jane</h5>			</center>		
-						</div> 
+					<form method="POST" action="https://formspree.io/gabydi106@gmail.com" id="boxform">
+						<h3>1. Name of Restaurant:</h3>
+							<input type="text" class="form-control" name="restaurantName" id="name" placeholder="Restaurant Name">
 						<h4></h4>
-						<form method="POST" action="https://formspree.io/gabydi106@gmail.com" id="boxform">
-						<h3>2. What size? </h3>
-						  <input id="size1" type="radio" name="size" value="size1" onclick="calculateTotal()">
-						  <label for="size1">Size 1</label>
-						  <input id="size2" type="radio" name="size" value="size2" onclick="calculateTotal()">
-						  <label for="size2">Size 2</label>
-						  <input id="size3" type="radio" name="size" value="size3" onclick="calculateTotal()">
-						  <label for="size3">Size 3</label>
-						<h3>3. What Material?</h3>
-						  <input id="material1" type="radio" name="material" value="kraft" onclick="calculateTotal()">
-						  <label for="material1">Kraft</label>
-						  <input id="material2" type="radio" name="material" value="white" onclick="calculateTotal()">
-						  <label for="material2">White</label>
-						<h3>4. What finish?</h3>
-						  <input id="finish1" type="radio" name="finish" value="none" onclick="calculateTotal()">
-						  <label for="finish1">None</label>
-						  <input id="finish2" type="radio" name="finish" value="inside" onclick="calculateTotal()">
-						  <label for="finish2">Waterproof interior</label>
-						  <input id="finish3" type="radio" name="finish" value="bothsides" onclick="calculateTotal()">
-						  <label for="finish3">Both Sides Waterproof</label>
-						 <h3>5. Would you like to print on the packaging? </h3>
-						  <input id="print1" type="radio" name="print" value="none" onclick="calculateTotal()">
-						  <label for="print1">None</label>
-						  <input id="print2" type="radio" name="print" value="logo" onclick="calculateTotal()">
-						  <label for="print2">Monochrome Logo</label>
-						  <input id="print3" type="radio" name="print" value="full" onclick="calculateTotal()">
-						  <label for="print4">Full color printing</label>
-						 <h3>6. How many would you like? </h3>
-						  <input id="qty1" type="radio" name="qty" value="100" onclick="calculateTotal()">
-						  <label for="qty1">100</label>
-						  <input id="qty2" type="radio" name="qty" value="500" onclick="calculateTotal()">
-						  <label for="qty2">500</label>
-						  <input id="qty3" type="radio" name="qty" value="1000" onclick="calculateTotal()">
-						  <label for="qty3">1,000</label>
-						  <input id="qty4" type="radio" name="qty" value="4000" onclick="calculateTotal()">
-						  <label for="qty4">4,000</label>
-						  <input id="qty5" type="radio" name="qty" value="10000" onclick="calculateTotal()">
-						  <label for="qty5">10,000</label>
+						
+						<h3>2. Type of Cuisine: </h3>
+						<br>
+						  <select class="form-control" id="cuisine">
+						  <option selected disabled>Select one...</option>
+							<option>American</option>
+							<option>Canadian</option>
+							<option>Chinese</option>
+							<option>Coffee</option>
+							<option>Dessert</option>
+							<option>Filipino</option>
+							<option>French</option>
+							<option>Greek</option>
+							<option>Indian</option>
+							<option>Italian</option>
+							<option>Japanese</option>
+							<option>Korean</option>
+							<option>Malaysian</option>
+							<option>Mexican</option>
+							<option>Thai</option>
+							<option>Singaporean</option>
+							<option>Spanish</option>
+							<option>Taiwanese</option>
+							<option>Vietnamese</option>
+						  </select>
+						  <br>
+						<h3>3. Style of Food: </h3>
+						  <input type="text" class="form-control" name="restaurantName" id="foodStyle" placeholder="e.g. Elevated Chinese, Fun Dining, Farm to Table, etc...">
+						<h3>4. Price Point</h3>
+						
+					
+						  <input id="size1" class="buttonBox" type="radio" name="price" value="$" onclick="previewButton()">
+						  <label for="size1">$</label>
+						  <input id="size2" class="buttonBox" type="radio" name="price" value="$$" onclick="previewButton()">
+						  <label for="size2">$$</label>
+						  <input id="size3" class="buttonBox" type="radio" name="price" value="$$$" onclick="previewButton()">
+						  <label for="size3">$$$</label>
+						  <input id="size4" class="buttonBox" type="radio" name="price" value="$$$$" onclick="previewButton()">
+						  <label for="size4">$$$$</label>
+						  <font color="green"><div id="seePricePoint"></div> </font>
+					
+						 <h3>5. Featured Dish </h3>
+							<input type="text" class="form-control" name="featuredDish" id="featured" placeholder="Featured Dish">
+						 <h3>5. Details: </h3>
+						  <input type="text" class="form-control" name="location" id="location" placeholder="Location"> <br>
+						  <input type="text" class="form-control" name="hours" id="hours" placeholder="Hours of Operation (i.e. Closed on certain days?)"> <br>
+						  <input type="text" class="form-control" name="waitTime" id="waitTime" placeholder="Typical Wait Times (i.e. Long line ups, reservation recommended, etc...)">
+						  
+						 <h3>6. The Verdict </h3>
+						 
+						  <input id="qty1" class="buttonBox" type="radio" name="score" value="1" onclick="calculateTotal()">
+						  <label for="qty1"><span class="glyphicon glyphicon-heart"></span></label>
+						  <input id="qty2" class="buttonBox" type="radio" name="score" value="2" onclick="calculateTotal()">
+						  <label for="qty2"><span class="glyphicon glyphicon-thumbs-up"></label>
+						  <input id="qty3" class="buttonBox" type="radio" name="score" value="3" onclick="calculateTotal()">
+						  <label for="qty3"><span class="glyphicon glyphicon-asterisk"></label>
+						  <input id="qty4" class="buttonBox" type="radio" name="score" value="4" onclick="calculateTotal()">
+						  <label for="qty4"><span class="glyphicon glyphicon-ok"></label>
+						  <input id="qty5" class="buttonBox" type="radio" name="score" value="5" onclick="calculateTotal()">
+						  <label for="qty5"><span class="glyphicon glyphicon-ban-circle"></label>
+						  
+						  <h3>7. Notes: </h3>
+						  <textarea class="form-control" rows="8" name="notes"> </textarea>
 							
 						  <input type="hidden" name="_next" value="http://gabydi106.github.io/aphinitea/thanks.html" />
 						  <input type="hidden" name="_subject" value="New order on Aphinitea.com!" />
@@ -182,7 +192,7 @@
 			</form> 
 					</div>
 					<div class="col-xs-12 col-md-4 fixedElement">
-							<h3>Total Price
+							<h3>Restaurant Report
 							<div id="totalPrice"></div>
 							</h3>
 							
@@ -251,128 +261,37 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
-	<script>
-		var size_prices = new Array();
-		size_prices["size1"]=20;
-		size_prices["size2"]=25;
-		size_prices["size3"]=35;
+	<script>	
+		var price_points = new Array();
+		price_points["$"]="So Cheap! Good Value!";
+		price_points["$$"]="Moderate";
+		price_points["$$$"]="Expensive";
+		price_points["$$$$"]="SPLURGE!!!"
 		
-		var material_prices = new Array();
-		material_prices["kraft"]=10;
-		material_prices["white"]=20;
-		
-		var finish_prices = new Array();
-		finish_prices["none"]=10;
-		finish_prices["inside"]=20;
-		finish_prices["bothsides"]=20;
-		
-		var print_prices = new Array();
-		print_prices["none"]=10;
-		print_prices["logo"]=20;
-		print_prices["full"]=20;
-		
-		var qty_prices = new Array();
-		qty_prices["100"]=40;
-		qty_prices["500"]=30;
-		qty_prices["1000"]=20;
-		qty_prices["7000"]=15;
-		qty_prices["10000"]=10;
-
-		function getSizePrice()
+		function getPricePoint()
 		{
-			var sizePrice=0;		
+			var printPrice;		
 			var theForm = document.forms["boxform"];		
-			var size = theForm.elements["size"];
+			var price = theForm.elements["price"];
 
-			for(var i = 0; i < size.length; i++)
+			for(var i = 0; i < price.length; i++)
 			{
-				if(size[i].checked) 
+				if(price[i].checked) 
 				{
-					sizePrice = size_prices[size[i].value];
-					break;
-				}
-			}
-			return sizePrice;
-		}
-		
-		
-	
-		function getMaterialPrice()
-		{
-			var materialPrice=0;		
-			var theForm = document.forms["boxform"];		
-			var material = theForm.elements["material"];
-
-			for(var i = 0; i < material.length; i++)
-			{
-				if(material[i].checked) 
-				{
-					materialPrice = material_prices[material[i].value];
-					break;
-				}
-			}
-			return materialPrice;
-		}
-		
-		function getPrintPrice()
-		{
-			var printPrice=0;		
-			var theForm = document.forms["boxform"];		
-			var print = theForm.elements["print"];
-
-			for(var i = 0; i < print.length; i++)
-			{
-				if(print[i].checked) 
-				{
-					printPrice = print_prices[print[i].value];
+					printPrice = price_points[price[i].value];
 					break;
 				}
 			}
 			return printPrice;
 		}
 		
-		function getFinishPrice()
-		{
-			var finishPrice=0;		
-			var theForm = document.forms["boxform"];		
-			var finish = theForm.elements["finish"];
-
-			for(var i = 0; i < finish.length; i++)
-			{
-				if(finish[i].checked) 
-				{
-					finishPrice = finish_prices[finish[i].value];
-					break;
-				}
-			}
-			return finishPrice;
-		}
-		
-		function getQtyPrice()
-		{
-			var qtyPrice=0;		
-			var theForm = document.forms["boxform"];		
-			var qty = theForm.elements["qty"];
-
-			for(var i = 0; i < qty.length; i++)
-			{
-				if(qty[i].checked) 
-				{
-					qtyPrice = qty_prices[qty[i].value];
-					break;
-				}
-			}
-			return qtyPrice;
-		}
-
-		function calculateTotal()
+		function previewButton()
 		{
 			//Here we get the total price by calling our function
 			//Each function returns a number so by calling them we add the values they return together
 			
-			var boxPrice = getSizePrice() + getMaterialPrice() + getPrintPrice() + getFinishPrice() + getQtyPrice() ;
-			document.getElementById('totalPrice').innerHTML =
-			"$"+boxPrice+".00"
+			var pricePoint = getPricePoint() ;
+			document.getElementById('seePricePoint').innerHTML = pricePoint ;
 		}
 	
 	
