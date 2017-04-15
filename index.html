@@ -91,7 +91,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="index.html">New Report</a>
+                        <a href="http://gabydi106.github.io/thefoodi">New Report</a>
+                    </li>
+					 <li class="page-scroll">
+                        <a href="thefoodi.com">Back to Blog</a>
                     </li>
                     
                 </ul>
@@ -109,12 +112,12 @@
 					<div class="col-xs-12 col-md-8">
 					<form method="POST" action="https://formspree.io/gabydi106@gmail.com" id="boxform">
 						<h3>1. Name of Restaurant:</h3>
-							<input type="text" class="form-control" name="restaurantName" id="name" placeholder="Restaurant Name">
+							<input type="text" class="form-control" name="Restaurant Name" id="restaurantName" placeholder="Restaurant Name" onchange="getName()">
 						<h4></h4>
 						
 						<h3>2. Type of Cuisine: </h3>
 						<br>
-						  <select class="form-control" id="cuisine">
+						  <select class="form-control" id="restaurantCuisine" name="Restaurant Cuisine" onchange="getCuisine()">
 						  <option selected disabled>Select one...</option>
 							<option>American</option>
 							<option>Canadian</option>
@@ -138,42 +141,44 @@
 						  </select>
 						  <br>
 						<h3>3. Style of Food: </h3>
-						  <input type="text" class="form-control" name="restaurantName" id="foodStyle" placeholder="e.g. Elevated Chinese, Fun Dining, Farm to Table, etc...">
+						  <input type="text" class="form-control" name="Style of Food" id="foodStyle" placeholder="e.g. Elevated Chinese, Fun Dining, Farm to Table, etc..." onchange="getStyle()">
 						<h3>4. Price Point</h3>
 						
 					
-						  <input id="size1" class="buttonBox" type="radio" name="price" value="$" onclick="previewButton()">
+						  <input id="size1" class="buttonBox" type="radio" name="Price Point" value="$" onclick="previewPrice()">
 						  <label for="size1">$</label>
-						  <input id="size2" class="buttonBox" type="radio" name="price" value="$$" onclick="previewButton()">
+						  <input id="size2" class="buttonBox" type="radio" name="Price Point" value="$$" onclick="previewPrice()">
 						  <label for="size2">$$</label>
-						  <input id="size3" class="buttonBox" type="radio" name="price" value="$$$" onclick="previewButton()">
+						  <input id="size3" class="buttonBox" type="radio" name="Price Point" value="$$$" onclick="previewPrice()">
 						  <label for="size3">$$$</label>
-						  <input id="size4" class="buttonBox" type="radio" name="price" value="$$$$" onclick="previewButton()">
+						  <input id="size4" class="buttonBox" type="radio" name="Price Point" value="$$$$" onclick="previewPrice()">
 						  <label for="size4">$$$$</label>
 						  <font color="green"><div id="seePricePoint"></div> </font>
 					
 						 <h3>5. Featured Dish </h3>
-							<input type="text" class="form-control" name="featuredDish" id="featured" placeholder="Featured Dish">
-						 <h3>5. Details: </h3>
-						  <input type="text" class="form-control" name="location" id="location" placeholder="Location"> <br>
-						  <input type="text" class="form-control" name="hours" id="hours" placeholder="Hours of Operation (i.e. Closed on certain days?)"> <br>
-						  <input type="text" class="form-control" name="waitTime" id="waitTime" placeholder="Typical Wait Times (i.e. Long line ups, reservation recommended, etc...)">
+							<input type="text" class="form-control" name="Featured Dish" id="featured" placeholder="Featured Dish" onchange="getDish()">
+						 <h3>6. Details: </h3>
+						  <input type="text" class="form-control" name="Location" id="location" placeholder="Location" onchange="getLocation()"> <br>
+						  <input type="text" class="form-control" name="Hours" id="hours" placeholder="Hours of Operation (i.e. Closed on certain days?)" onchange="getHours()"> <br>
+						  <input type="text" class="form-control" name="Wait Time" id="waitTime" placeholder="Typical Wait Times (i.e. Long line ups, reservation recommended, etc...)" onchange="getWait()">
 						  
-						 <h3>6. The Verdict </h3>
+						 <h3>7. The Verdict </h3>
 						 
-						  <input id="qty1" class="buttonBox" type="radio" name="score" value="1" onclick="calculateTotal()">
+						  <input id="qty1" class="buttonBox" type="radio" name="Score" value="1" onclick="previewScore()">
 						  <label for="qty1"><span class="glyphicon glyphicon-heart"></span></label>
-						  <input id="qty2" class="buttonBox" type="radio" name="score" value="2" onclick="calculateTotal()">
+						  <input id="qty2" class="buttonBox" type="radio" name="Score" value="2" onclick="previewScore()">
 						  <label for="qty2"><span class="glyphicon glyphicon-thumbs-up"></label>
-						  <input id="qty3" class="buttonBox" type="radio" name="score" value="3" onclick="calculateTotal()">
+						  <input id="qty3" class="buttonBox" type="radio" name="Score" value="3" onclick="previewScore()">
 						  <label for="qty3"><span class="glyphicon glyphicon-asterisk"></label>
-						  <input id="qty4" class="buttonBox" type="radio" name="score" value="4" onclick="calculateTotal()">
+						  <input id="qty4" class="buttonBox" type="radio" name="Score" value="4" onclick="previewScore()">
 						  <label for="qty4"><span class="glyphicon glyphicon-ok"></label>
-						  <input id="qty5" class="buttonBox" type="radio" name="score" value="5" onclick="calculateTotal()">
+						  <input id="qty5" class="buttonBox" type="radio" name="Score" value="5" onclick="previewScore()">
 						  <label for="qty5"><span class="glyphicon glyphicon-ban-circle"></label>
 						  
-						  <h3>7. Notes: </h3>
-						  <textarea class="form-control" rows="8" name="notes"> </textarea>
+						  <font color="green"><div id="seeScore"></div> </font>
+						  
+						  <h3>8. Notes: </h3>
+						  <textarea class="form-control" rows="8" name="Notes" onchange="getNotes()"> </textarea>
 							
 						  <input type="hidden" name="_next" value="http://gabydi106.github.io/thefoodi/thanks.html" />
 						  <input type="hidden" name="_subject" value="New order on thefoodi.com!" />
@@ -181,59 +186,30 @@
 			</form> 
 					</div>
 					<div class="col-xs-12 col-md-4 fixedElement">
-							<h3>Restaurant Report
+							<h3><u>Restaurant Report</u>
+							<font size=4>
 							<div id="totalPrice"></div>
 							</h3>
+							<div id="summaryName"></div>
+							<div id="summaryCuisine"></div>
+							<div id="summaryStyle"></div>
+							<div id="summaryDish"></div> <br>
+							<div id="summaryPrice"></div>
+							<div id="summaryLocation"></div>
+							<div id="summaryHours"></div>
+							<div id="summaryWait"></div> <br>
+							<div id="summaryScore"></div>
+							</font>
+							<div id="summaryNotes"></div>
+							
+							
 							
 					</div>
 				</div>
 			</div>
 	</section>
 	
-	
-	<section id="calculate">
-			<div class="container"> 
-			
-			
-				
-			</div>
-	</section>
-	
-	 <!-- Footer -->
-
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-					<br>
-                        <img src="img/logo-alt.png" width="40%">
-						<font size=3><br><br>noun ( pl. -teas): a spontaneous or natural liking or sympathy for someone or something</font>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="http://instagram.com/the.foodi" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="http://twitter.com/thefoodi" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-							<li>
-                                <a href="http://facebook.com/thefoodi" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                        </ul>
-						<font size=3><i>minimalist journal on food, travel, and coffee</font>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <img src="https://dl.dropboxusercontent.com/s/kqnjm3tqfku4s85/sm_final.png" width="30%">
-                         <p><a href="mailto:hello@thefoodi.com">iwant@thefoodi.com</a>
-						</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
+	    <div class="footer-below">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -247,18 +223,25 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
-	<script>	
+	<script>
 		var price_points = new Array();
 		price_points["$"]="So Cheap! Good Value!";
 		price_points["$$"]="Moderate";
 		price_points["$$$"]="Expensive";
-		price_points["$$$$"]="SPLURGE!!!"
+		price_points["$$$$"]="SPLURGE!!!";
+		
+		var ratings = new Array();
+		ratings["1"]="Instagram Worthy";
+		ratings["2"]="Facebook Worthy. 100% Would Recommend";
+		ratings["3"]="Michelin Star Worthy";
+		ratings["4"]="Great place, consistent, reliable";
+		ratings["5"]="Overrated";
 		
 		function getPricePoint()
 		{
 			var printPrice;		
 			var theForm = document.forms["boxform"];		
-			var price = theForm.elements["price"];
+			var price = theForm.elements["Price Point"];
 
 			for(var i = 0; i < price.length; i++)
 			{
@@ -271,15 +254,149 @@
 			return printPrice;
 		}
 		
-		function previewButton()
+		function getScore()
+		{
+			var printScore;		
+			var theForm = document.forms["boxform"];		
+			var score = theForm.elements["Score"];
+
+			for(var i = 0; i < score.length; i++)
+			{
+				if(score[i].checked) 
+				{
+					printScore = ratings[score[i].value];
+					break;
+				}
+			}
+			return printScore;
+		}
+		
+		function getCuisine()
+		{
+			var cuisine;
+			var theForm = document.forms["boxform"];
+			var selectedCuisine = theForm.elements["Restaurant Cuisine"];
+			cuisine = selectedCuisine.value;
+			document.getElementById('summaryCuisine').innerHTML = "<b>Cuisine: </b>" + cuisine ;			
+		}
+		
+		function getName()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var restaurantName = theForm.elements["Restaurant Name"];
+			var name;
+			//If the textbox is not blank
+			if(restaurantName.value!="")
+			{
+				name = restaurantName.value;
+			}
+			document.getElementById('summaryName').innerHTML = "<b>Name: </b>" + name ;
+		}
+		
+		function getStyle()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var foodStyle = theForm.elements["Style of Food"];
+			var style;
+			//If the textbox is not blank
+			if(foodStyle.value!="")
+			{
+				style = foodStyle.value;
+			}
+			document.getElementById('summaryStyle').innerHTML = "<b>Style of Food: </b>" + style ;
+		}
+		
+		function getDish()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var featuredDish = theForm.elements["Featured Dish"];
+			var dish;
+			//If the textbox is not blank
+			if(featuredDish.value!="")
+			{
+				dish = featuredDish.value;
+			}
+			document.getElementById('summaryDish').innerHTML = "<b>Featured Dish: </b>" + dish ;
+		}
+		
+		function getLocation()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var restaurantLocation = theForm.elements["Location"];
+			var location;
+			//If the textbox is not blank
+			if(restaurantLocation.value!="")
+			{
+				location = restaurantLocation.value;
+			}
+			document.getElementById('summaryLocation').innerHTML = "<b>Location: </b>" + location ;
+		}
+		
+		function getHours()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var restaurantHours = theForm.elements["Hours"];
+			var hours;
+			//If the textbox is not blank
+			if(restaurantHours.value!="")
+			{
+				hours = restaurantHours.value;
+			}
+			document.getElementById('summaryHours').innerHTML = "<b>Operation Hours: </b>" + hours ;
+		}
+		
+		function getWait()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var restaurantWait = theForm.elements["Wait Time"];
+			var wait;
+			//If the textbox is not blank
+			if(restaurantWait.value!="")
+			{
+				wait = restaurantWait.value;
+			}
+			document.getElementById('summaryWait').innerHTML = "<b>Average Waiting Time: </b>" + wait ;
+		}
+		
+		function getNotes()
+		{
+			var theForm = document.forms["boxform"];
+			//Get a reference to the TextBox
+			var restaurantNotes = theForm.elements["Notes"];
+			var notes;
+			//If the textbox is not blank
+			if(restaurantNotes.value!="")
+			{
+				notes = restaurantNotes.value;
+			}
+			document.getElementById('summaryNotes').innerHTML = "<hr> <b>Notes: </b>" + notes ;
+		}
+		
+		function previewPrice()
 		{
 			//Here we get the total price by calling our function
 			//Each function returns a number so by calling them we add the values they return together
 			
 			var pricePoint = getPricePoint() ;
 			document.getElementById('seePricePoint').innerHTML = pricePoint ;
+			document.getElementById('summaryPrice').innerHTML = "<b>Price Point: </b>"+ pricePoint;	
 		}
-	
+		
+		function previewScore()
+		{
+			//Here we get the total price by calling our function
+			//Each function returns a number so by calling them we add the values they return together
+			
+			var score = getScore() ;
+			document.getElementById('seeScore').innerHTML = score;	
+			document.getElementById('summaryScore').innerHTML = "<b>The Verdict: </b>"+ score;	
+		}
 	
 	</script>
 
